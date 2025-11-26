@@ -165,6 +165,100 @@ export default function Index() {
         </div>
       </section>
 
+      <section id="portfolio" className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-5xl font-bold mb-4">Наши кейсы</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Реальные результаты работы с брендами из разных сфер
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                image: "https://cdn.poehali.dev/projects/d9a6668b-6561-43d9-ad2b-79740cc5a40d/files/e484f1f3-e6d4-4ac3-84e5-3fd37c60483a.jpg",
+                title: "Редизайн сайта TechStart",
+                category: "Веб-дизайн",
+                result: "+320% конверсий",
+                color: "from-primary to-secondary"
+              },
+              {
+                image: "https://cdn.poehali.dev/projects/d9a6668b-6561-43d9-ad2b-79740cc5a40d/files/da079537-08a3-4ed7-b937-74414fc33dc9.jpg",
+                title: "SMM-стратегия для FashionHub",
+                category: "Социальные сети",
+                result: "150K новых подписчиков",
+                color: "from-secondary to-primary"
+              },
+              {
+                image: "https://cdn.poehali.dev/projects/d9a6668b-6561-43d9-ad2b-79740cc5a40d/files/e5ed933d-a435-4c8c-ac60-efb121f5a8ca.jpg",
+                title: "Полный ребрендинг GreenLife",
+                category: "Брендинг",
+                result: "+280% узнаваемости",
+                color: "from-primary to-secondary"
+              },
+              {
+                image: "https://cdn.poehali.dev/projects/d9a6668b-6561-43d9-ad2b-79740cc5a40d/files/d2f74689-643d-467e-9126-46568f22483b.jpg",
+                title: "Таргет для EdTech платформы",
+                category: "Реклама",
+                result: "ROI 450%",
+                color: "from-secondary to-primary"
+              },
+              {
+                image: "https://cdn.poehali.dev/projects/d9a6668b-6561-43d9-ad2b-79740cc5a40d/files/239c3892-fd46-4bdc-9f43-9fe54032e473.jpg",
+                title: "SEO-продвижение интернет-магазина",
+                category: "SEO",
+                result: "ТОП-3 по 50 запросам",
+                color: "from-primary to-secondary"
+              },
+              {
+                image: "https://cdn.poehali.dev/projects/d9a6668b-6561-43d9-ad2b-79740cc5a40d/files/dcad690d-7a54-43c0-b0fe-89dbcd7bfc0c.jpg",
+                title: "Видеокампания для стартапа",
+                category: "Видео",
+                result: "2M просмотров",
+                color: "from-secondary to-primary"
+              }
+            ].map((project, index) => (
+              <Card
+                key={index}
+                className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer animate-scale-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-60 group-hover:opacity-80 transition-opacity`}></div>
+                  <div className="absolute top-4 right-4">
+                    <span className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex items-center gap-2 text-secondary font-semibold">
+                    <Icon name="TrendingUp" size={20} />
+                    <span>{project.result}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 group">
+              Смотреть все кейсы
+              <Icon name="ArrowRight" className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12 animate-fade-in">
